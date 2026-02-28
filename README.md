@@ -98,34 +98,6 @@ Generate a comprehensive, shareable Markdown or printable PDF document detailing
 
 ---
 
-## 📂 Project Structure
-
-\`\`\`text
-src/
-├── components/ # React components
-│ ├── canvas/ # React Flow nodes, edges, context menus
-│ ├── export/ # Export panels (IaC, Documents)
-│ ├── narrator/ # Interview Narrator panel and Web Speech API wrapper
-│ ├── panels/ # Sidebars (Component picker, Metrics overview)
-│ └── shared/ # Tooltips, UI buttons, Animated Counters
-├── constants/ # Hardcoded data
-│ ├── componentDefinitions.ts # Master catalog of 30+ components
-│ └── narratorTemplates.ts # Seed-based sentence variants for narration
-├── engine/ # Core business logic (No React UI inside here)
-│ ├── ArchitectureValidator.ts # Scale-intelligent grading system
-│ ├── ValidationContext.ts # Traffic & Component tier resolution
-│ ├── MetricsCalculator.ts # P99, Availability, Cost algorithms
-│ ├── DocumentExporter.ts # Markdown / Print layout generation
-│ ├── IaCExporter.ts # Docker Compose & Terraform compilation
-│ └── InterviewNarrator.ts # Graph -> Narrative translation
-├── store/ # Zustand state slices
-│ ├── canvasStore.ts # React Flow nodes/edges state
-│ ├── simulationStore.ts # Traffic load, metrics, load testing state
-│ └── uiStore.ts # Sidebars, modals, panels visibility state
-├── types/ # TypeScript interfaces
-└── utils/ # Formatters, Math helpers, Graph helpers
-\`\`\`
-
 ---
 
 ## 🧪 Educational Philosophy
