@@ -1,0 +1,159 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* ─── Reset ──────────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #050d1a;
+  color: #ffffff;
+  font-family: "Syne", sans-serif;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ─── React Flow Overrides ───────────────────────────────────────────────── */
+.react-flow__node {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.react-flow__edge-path {
+  stroke-linecap: round;
+}
+
+.react-flow__handle {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.react-flow__node:hover .react-flow__handle,
+.react-flow__node.selected .react-flow__handle {
+  opacity: 1;
+}
+
+.react-flow__minimap {
+  border-radius: 8px !important;
+}
+
+.react-flow__controls {
+  border-radius: 8px !important;
+}
+
+.react-flow__panel {
+  margin: 12px !important;
+}
+
+.react-flow__attribution {
+  display: none !important;
+}
+
+/* ─── Animated Dot Grid ──────────────────────────────────────────────────── */
+.dot-grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px;
+}
+
+/* ─── Dash Animation ─────────────────────────────────────────────────────── */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+@keyframes tokenFlow {
+  from {
+    stroke-dashoffset: 18;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes tooltipIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes aiShimmer {
+  0% {
+    border-color: rgba(199, 125, 255, 0.2);
+  }
+  50% {
+    border-color: rgba(199, 125, 255, 0.4);
+  }
+  100% {
+    border-color: rgba(199, 125, 255, 0.2);
+  }
+}
+
+.ai-node-shimmer {
+  animation: aiShimmer 3s ease-in-out infinite;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(0, 245, 255, 0.2);
+  color: #00f5ff;
+}
+
+/* ─── Input Styling ──────────────────────────────────────────────────────── */
+select {
+  cursor: pointer;
+}
+
+input[type="range"] {
+  cursor: pointer;
+}
+
+select option {
+  background: #0a1628;
+  color: white;
+}
+
+/* ─── Focus ──────────────────────────────────────────────────────────────── */
+*:focus-visible {
+  outline: 1px solid rgba(0, 245, 255, 0.3);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
